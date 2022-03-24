@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="/dist/output.css" rel="stylesheet">
+  <script type="text/javascript" defer src="main.js"></script>
+</head>
+    <body class="bg-slate-700 text-gray-400">
+        <h1 class="text-3xl font-bold underline text-center font-mono py-8">
+             Code Ninjas Question of the Day!
+        </h1>
+        <div class="flex items-center justify-center">
+            <img src="pictures/code-ninjas-logo.png" class="scale-150"></img>
+        </div>
+        <h6 class="text-center font-serif text-4xl py-16">Question goes here</h6>
+        <div id="form" class="flex flex-col items-center justify-center">
+            <form class="border-2 rounded-lg border-black py-1 px-1">
+              <fieldset class="py-1">
+                <legend>Sign in:</legend><br>
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" class="text-black rounded-md"><br><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" class="text-black rounded-md"><br><br>
+                <label for="belt">Your belt:</label><br>
+                <select id="belt" name="belt" class="text-black rounded-md">
+                  <option value="White Belt">White Belt</option>
+                  <option value="Yellow Belt">Yellow Belt</option>
+                  <option value="Orange Belt">Orange Belt</option>
+                  <option value="Green Belt">Green Belt</option>
+                  <option value="Blue Belt">Blue Belt</option>
+                  <option value="Purple Belt">Purple Belt</option>
+                  <option value="Brown Belt">Brown Belt</option>
+                  <option value="Red Belt">Red Belt</option>
+                  <option value="Black Belt">Black Belt</option>
+                </select><br>
+                <form class="border-2 rounded-lg border-black py-1 px-1">
+                  <fieldset class="py-1">
+                    <legend>Your Answer:</legend>
+                    <input type="text" name="answer" id="answer" class="text-black w-96 rounded-md">
+                  </fieldset>
+                </form><br>
+                <button class="px-1 border-2 border-black rounded-lg hover:bg-black hover:text-white" onclick="submitAction()">Submit</button>
+              </fieldset>
+          </form>
+        </div>
+    </body>
+</html>
