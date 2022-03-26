@@ -88,10 +88,16 @@ function updateData() {
           }
         }
       } else {
-        appendPre('No data found.');
+        question = "No Question";
+        option1 = "No Option 1";
+        option2 = "No Option 2";
+
+        document.getElementById("question_label").innerText = question;
+        document.getElementById("option1").innerHTML = option1;
+        document.getElementById("option2").innerHTML = option2;
       }
     }, function(response) {
-      appendPre('Error: ' + response.result.error.message);
+
     });
 }
 
