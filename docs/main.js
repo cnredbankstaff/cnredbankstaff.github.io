@@ -51,7 +51,7 @@ function initClient() {
         updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
         authorizeButton.onclick = handleAuthClick;
     }, function(error) {
-        appendPre(JSON.stringify(error, null, 2));
+        console.log(JSON.stringify(error, null, 2));
     });
 }
 
