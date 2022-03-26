@@ -9,7 +9,9 @@
 </head>
     <body class="bg-slate-700 text-gray-400">
       <div class="flex items-center justify-end">
-        <button id="authorize_button">Auth</button>
+        <button id="authorize_button" class="visible">Auth</button>
+        <button id="view_answers" class="visible">View</button>
+        <button id="view_question" class="invisible">Back</button>
       </div>
       
         <h1 class="text-3xl font-bold underline text-center font-mono py-8">
@@ -19,7 +21,7 @@
             <img src="pictures/code-ninjas-logo.png" class="scale-150"></img>
         </div>
         <h2 id="date" class="text-3xl font-bold underline text-center font-mono">Date</h2>
-        <h6 class="text-center font-serif text-4xl py-16">Question goes here</h6>
+        <h6 id="question_label" class="text-center font-serif text-4xl py-16">Question goes here</h6>
         <div id="form" class="flex flex-col items-center justify-center pb-5">
             <form class="border-2 rounded-lg border-black py-1 px-1 w-96">
               <fieldset class="py-1 flex flex-col items-center justify-center">
@@ -58,5 +60,10 @@
               </fieldset>
           </form>
         </div>
+
+        <script async defer src="https://apis.google.com/js/api.js"
+          onload="this.onload=function(){};handleClientLoad()"
+          onreadystatechange="if (this.readyState === 'complete') this.onload()">
+        </script>
     </body>
 </html>
