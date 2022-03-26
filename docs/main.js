@@ -73,7 +73,6 @@ function updateData() {
     }).then(function(response) {
       var range = response.result;
       if (range.values.length > 0) {
-        appendPre('Current Date Q:');
         for (i = 0; i < range.values.length; i++) {
           var row = range.values[i];
           // Print columns A and E, which correspond to indices 0 and 4.
