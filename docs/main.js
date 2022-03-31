@@ -25,6 +25,8 @@ let option2;
 let dateObj = new Date();
 let date = `${dateObj.getMonth() + 1}/${dateObj.getDate()}/${dateObj.getFullYear()}`
 const FORMDIV = document.getElementById("form");
+let result = getWeekNumber(new Date());
+console.log(result);
 
 
 
@@ -76,7 +78,7 @@ function updateData() {
         for (i = 0; i < range.values.length; i++) {
           var row = range.values[i];
           // Print columns A and E, which correspond to indices 0 and 4.
-          if (row[0] === new Date().toLocaleDateString()) {
+          if (row[1] === result) {
             question = row[2];
             option1 = row[3];
             option2 = row[4];
@@ -100,10 +102,6 @@ function updateData() {
     });
 }
 
-
-
-
-
 function submitAction() {
     fname = document.getElementById("fname").value;
     lname = document.getElementById("lname").value;
@@ -115,4 +113,19 @@ function submitAction() {
 
 window.onload = function() {
     document.getElementById("date").innerHTML = date;
+}
+
+
+function getWeekNumber(d) {
+    // Copy date so don't modify original
+    d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    // Set to nearest Thursday: current date + 4 - current day number
+    // Make Sunday's day number 7
+    d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()||7));
+    // Get first day of year
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+    // Calculate full weeks to nearest Thursday
+    var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
+    // Return array of year and week number
+    return [d.getUTCFullYear(), weekNo];
 }
