@@ -76,7 +76,7 @@ function updateData() {
         for (i = 0; i < range.values.length; i++) {
           var row = range.values[i];
           // Print columns A and E, which correspond to indices 0 and 4.
-          if (row[1] === result[1]) {
+          if (row[1] === result) {
             question = row[2];
             option1 = row[3];
             option2 = row[4];
@@ -84,17 +84,17 @@ function updateData() {
             document.getElementById("question_label").innerText = question;
             document.getElementById("option1").innerHTML = option1;
             document.getElementById("option2").innerHTML = option2;
+          } else {
+            question = "No Question";
+            option1 = "No Option 1";
+            option2 = "No Option 2";
+    
+            document.getElementById("question_label").innerText = question;
+            document.getElementById("option1").innerHTML = option1;
+            document.getElementById("option2").innerHTML = option2;
           }
         }
-      } else {
-        question = "No Question";
-        option1 = "No Option 1";
-        option2 = "No Option 2";
-
-        document.getElementById("question_label").innerText = question;
-        document.getElementById("option1").innerHTML = option1;
-        document.getElementById("option2").innerHTML = option2;
-      }
+      } 
     }, function(response) {
 
     });
@@ -127,8 +127,8 @@ function getWeekNumber(d) {
     // Calculate full weeks to nearest Thursday
     var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
     // Return array of year and week number
-    return [d.getUTCFullYear(), weekNo];
+    return weekNo;
 }
 
 var result = getWeekNumber(new Date());
-console.log(result[1]);
+console.log(result);
