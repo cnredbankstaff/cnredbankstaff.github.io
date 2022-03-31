@@ -76,7 +76,7 @@ function updateData() {
         for (i = 0; i < range.values.length; i++) {
           var row = range.values[i];
           // Print columns A and E, which correspond to indices 0 and 4.
-          if (row[1] === result) {
+          if (row[1] === result[1]) {
             question = row[2];
             option1 = row[3];
             option2 = row[4];
@@ -131,4 +131,4 @@ function getWeekNumber(d) {
 }
 
 var result = getWeekNumber(new Date());
-console.log(result);
+console.log(result[1]);
