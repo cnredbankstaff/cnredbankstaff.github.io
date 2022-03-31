@@ -67,37 +67,37 @@ function updateSigninStatus(isSignedIn) {
 
 
 function updateData() {
-    gapi.client.sheets.spreadsheets.values.get({
-      spreadsheetId: '18riOJtSjAPxuKJ8rxOR2Tqeyc95UJ4XnIWZpViLOgwc',
-      range: 'Sheet1!A2:E',
-    }).then(function(response) {
+  gapi.client.sheets.spreadsheets.values.get({
+    spreadsheetId: '18riOJtSjAPxuKJ8rxOR2Tqeyc95UJ4XnIWZpViLOgwc',
+    range: 'Sheet1!A2:E',
+  }).then(function(response) {
       var range = response.result;
-      if (range.values.length > 0) {
-        for (i = 0; i < range.values.length; i++) {
-          var row = range.values[i];
-          // Print columns A and E, which correspond to indices 0 and 4.
-          if (row[1] === result) {
-            question = row[2];
-            option1 = row[3];
-            option2 = row[4];
+    if (range.values.length > 0) {
+      for (i = 13; i < range.values.length; i++) {
+        var row = range.values[i];
+        // Print columns A and E, which correspond to indices 0 and 4.
+        if (row[1] === result) {
+          question = row[2];
+          option1 = row[3];
+          option2 = row[4];
 
-            document.getElementById("question_label").innerText = question;
-            document.getElementById("option1").innerHTML = option1;
-            document.getElementById("option2").innerHTML = option2;
-          } else {
-            question = "No Question";
-            option1 = "No Option 1";
-            option2 = "No Option 2";
+          document.getElementById("question_label").innerText = question;
+          document.getElementById("option1").innerHTML = option1;
+          document.getElementById("option2").innerHTML = option2;
+        } else {
+          question = "No Question";
+          option1 = "No Option 1";
+          option2 = "No Option 2";
     
-            document.getElementById("question_label").innerText = question;
-            document.getElementById("option1").innerHTML = option1;
-            document.getElementById("option2").innerHTML = option2;
-          }
+          document.getElementById("question_label").innerText = question;
+          document.getElementById("option1").innerHTML = option1;
+          document.getElementById("option2").innerHTML = option2;
         }
-      } 
-    }, function(response) {
+      }
+    } 
+  }, function(response) {
 
-    });
+  });
 }
 
 
