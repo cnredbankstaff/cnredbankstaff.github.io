@@ -98,7 +98,7 @@ function updateData() {
       }
     } 
   }, function(response) {
-
+    console.log('Error: ' + response.result.error.message);
   });
 }
 
@@ -115,6 +115,7 @@ function submitAction() {
 
 window.onload = function() {
     document.getElementById("date").innerHTML = date;
+    updateData();
 }
 
 
