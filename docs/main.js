@@ -77,11 +77,12 @@ function updateData() {
         var row = range.values[i];
         // Print columns A and E, which correspond to indices 0 and 4.
         if (row[1] === result) {
-          question = row[2];
-          option1 = row[3];
-          option2 = row[4];
+          question = row[3];
+          option1 = row[4];
+          option2 = row[5];
+          console.log(row[3]);
 
-          document.getElementById("question_label").innerText = question;
+          document.getElementById("question_label").innerHTML = question;
           document.getElementById("option1").innerHTML = option1;
           document.getElementById("option2").innerHTML = option2;
         } else {
@@ -89,7 +90,7 @@ function updateData() {
           option1 = "No Option 1";
           option2 = "No Option 2";
     
-          document.getElementById("question_label").innerText = question;
+          document.getElementById("question_label").innerHTML = question;
           document.getElementById("option1").innerHTML = option1;
           document.getElementById("option2").innerHTML = option2;
         }
