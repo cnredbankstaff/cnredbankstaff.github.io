@@ -116,7 +116,6 @@ function submitAction() {
 
 window.onload = function() {
     document.getElementById("date").innerHTML = date;
-    updateData();
 }
 
 
