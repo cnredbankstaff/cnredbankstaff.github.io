@@ -75,8 +75,9 @@ function updateData() {
     var range = response.result;
     if (range.values.length > 0) {
       console.log("test2");
-      for (i = 13; i < range.values.length; i++) {
+      for (i = 13; i > range.values.length; i++) {
         var row = range.values[i];
+        console.log(i);
         // Print columns A and E, which correspond to indices 0 and 4.
         if (row[1] === result) {
           question = row[2];
