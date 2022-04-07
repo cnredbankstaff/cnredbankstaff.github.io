@@ -74,7 +74,7 @@ function updateData() {
     console.log("test");
     var range = response.result;
     if (range.values.length > 0) {
-      console.log(test2);
+      console.log("test2");
       for (i = 13; i < range.values.length; i++) {
         var row = range.values[i];
         // Print columns A and E, which correspond to indices 0 and 4.
