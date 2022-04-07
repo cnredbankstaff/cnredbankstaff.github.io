@@ -80,7 +80,7 @@ function updateData() {
           question = row[3];
           option1 = row[4];
           option2 = row[5];
-          console.log(row[3]);
+          console.log(question + " " + option1 + " " + option2);
 
           document.getElementById("question_label").innerHTML = question;
           document.getElementById("option1").innerHTML = option1;
