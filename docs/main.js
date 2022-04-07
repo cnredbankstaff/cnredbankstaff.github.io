@@ -71,15 +71,16 @@ function updateData() {
     spreadsheetId: '18riOJtSjAPxuKJ8rxOR2Tqeyc95UJ4XnIWZpViLOgwc',
     range: 'Sheet1!A2:E',
   }).then(function(response) {
-      var range = response.result;
+    console.log("test");
+    var range = response.result;
     if (range.values.length > 0) {
       for (i = 13; i < range.values.length; i++) {
         var row = range.values[i];
         // Print columns A and E, which correspond to indices 0 and 4.
         if (row[1] === result) {
-          question = row[3];
-          option1 = row[4];
-          option2 = row[5];
+          question = row[2];
+          option1 = row[3];
+          option2 = row[4];
           console.log(question + " " + option1 + " " + option2);
 
           document.getElementById("question_label").innerHTML = question;
@@ -132,4 +133,3 @@ function getWeekNumber(d) {
 }
 
 var result = getWeekNumber(new Date());
-console.log(result);
