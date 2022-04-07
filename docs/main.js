@@ -69,11 +69,12 @@ function updateSigninStatus(isSignedIn) {
 function updateData() {
   gapi.client.sheets.spreadsheets.values.get({
     spreadsheetId: '18riOJtSjAPxuKJ8rxOR2Tqeyc95UJ4XnIWZpViLOgwc',
-    range: 'Sheet1!A2:E',
+    range: 'Sheet1!A2:E2',
   }).then(function(response) {
     console.log("test");
     var range = response.result;
     if (range.values.length > 0) {
+      console.log(test2);
       for (i = 13; i < range.values.length; i++) {
         var row = range.values[i];
         // Print columns A and E, which correspond to indices 0 and 4.
