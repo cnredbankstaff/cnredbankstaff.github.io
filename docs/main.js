@@ -75,28 +75,27 @@ function updateData() {
     var range = response.result;
     if (range.values.length > 0) {
       console.log("test2");
-      console.log(response.result);
-      for (i = 0; i > range.values.length; i++) {
-        var row = range.values[i];
-        // Print columns A and E, which correspond to indices 0 and 4.
-        if (row[1] === result) {
-          question = row[2];
-          option1 = row[3];
-          option2 = row[4];
-          console.log(question + " " + option1 + " " + option2);
+      console.log(range);
+      console.log(result);
+      var row = range.values.length;
+      // Print columns A and E, which correspond to indices 0 and 4.
+      if (row[1] === result) {
+        question = row[2];
+        option1 = row[3];
+        option2 = row[4];
+        console.log(question + " " + option1 + " " + option2);
 
-          document.getElementById("question_label").innerHTML = question;
-          document.getElementById("option1").innerHTML = option1;
-          document.getElementById("option2").innerHTML = option2;
-        } else {
-          question = "No Question";
-          option1 = "No Option 1";
-          option2 = "No Option 2";
+        document.getElementById("question_label").innerHTML = question;
+        document.getElementById("option1").innerHTML = option1;
+        document.getElementById("option2").innerHTML = option2;
+      } else {
+        question = "No Question";
+        option1 = "No Option 1";
+        option2 = "No Option 2";
     
-          document.getElementById("question_label").innerHTML = question;
-          document.getElementById("option1").innerHTML = option1;
-          document.getElementById("option2").innerHTML = option2;
-        }
+        document.getElementById("question_label").innerHTML = question;
+        document.getElementById("option1").innerHTML = option1;
+        document.getElementById("option2").innerHTML = option2;
       }
     } 
   }, function(response) {
