@@ -71,12 +71,9 @@ function updateData() {
     spreadsheetId: '18riOJtSjAPxuKJ8rxOR2Tqeyc95UJ4XnIWZpViLOgwc',
     range: 'Sheet1!A2:E2',
   }).then(function(response) {
-    console.log("test");
     var range = response.result;
     if (range.values.length > 0) {
-      console.log("test2");
       console.log(range);
-      console.log(result);
       var row = range.values.length;
       console.log(row[2]);
       // Print columns A and E, which correspond to indices 0 and 4.
