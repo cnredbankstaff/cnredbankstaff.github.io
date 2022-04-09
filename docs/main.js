@@ -75,7 +75,7 @@ function updateData() {
     var range = response.result;
     if (range.values.length > 0) {
       console.log("test2");
-      console.log(range.values.length);
+      console.log(response.result);
       for (i = 13; i > range.values.length; i++) {
         var row = range.values[i];
         console.log(i);
@@ -136,4 +136,3 @@ function getWeekNumber(d) {
 }
 
 var result = getWeekNumber(new Date());
-//something isnt working
