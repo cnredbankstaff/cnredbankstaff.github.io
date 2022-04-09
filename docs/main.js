@@ -75,7 +75,7 @@ function updateData() {
     var range = response.result;
     if (range.values.length > 0) {
       console.log("test2");
-      console.log(range.value.length);
+      console.log(range.values.length);
       for (i = 13; i > range.values.length; i++) {
         var row = range.values[i];
         console.log(i);
