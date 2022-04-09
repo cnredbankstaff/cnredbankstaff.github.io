@@ -136,3 +136,4 @@ function getWeekNumber(d) {
 }
 
 var result = getWeekNumber(new Date());
+//something isnt working
