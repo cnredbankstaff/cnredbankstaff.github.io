@@ -76,6 +76,7 @@ function updateData() {
       var row = response.result.values[0];
       console.log(row[1]);
       console.log(row[2]);
+      console.log("weeknum " + row[3]);
       // its not pulling the updated spreadsheet
       // Print columns A and E, which correspond to indices 0 and 4.
       if (row[1] === weekNum) {
