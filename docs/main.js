@@ -73,8 +73,8 @@ function updateData() {
   }).then(function(response) {
     var range = response.result;
     if (range.values.length > 0) {
-      console.log(range);
       var row = response.result.values[0];
+      console.log(row[1]);
       // Print columns A and E, which correspond to indices 0 and 4.
       if (row[1] === weekNum) {
         question = row[2];
