@@ -79,7 +79,7 @@ function updateData() {
       console.log("weeknum " + weekNum);
       // its not pulling the updated spreadsheet
       // Print columns A and E, which correspond to indices 0 and 4.
-      if (row[1] === weekNum) {
+      if (row[1] == weekNum) {
         question = row[2];
         option1 = row[3];
         option2 = row[4];
