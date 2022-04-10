@@ -75,6 +75,7 @@ function updateData() {
     if (range.values.length > 0) {
       var row = response.result.values[0];
       console.log(row[1]);
+      // its not pulling the updated spreadsheet
       // Print columns A and E, which correspond to indices 0 and 4.
       if (row[1] === weekNum) {
         question = row[2];
