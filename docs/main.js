@@ -140,7 +140,12 @@ function submitAction() {
     fname = document.getElementById("fname").value;
     lname = document.getElementById("lname").value;
     belt = document.getElementById("belt").value;
-    answer = document.getElementById("answer").value;
+
+    if(document.getElementById("option1").checked) {
+      answer = document.getElementById("option1").value;
+    } else {
+      answer = document.getElementById("option2").value;
+    }
 
     console.log(fname + " " + lname + " " + belt + "" + answer);
     spreadsheetUpdate();
