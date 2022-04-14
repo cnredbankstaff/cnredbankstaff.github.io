@@ -118,18 +118,18 @@ function spreadsheetUpdate() {
     //   if()
     // }
   })
-  gapi.client.sheets.spreadsheets.values.update({
-    spreadsheetId: '1bilf2_IUbhUbA-Gh5AuQ-KJI0tYfQy4J53Ofq2hU6Ik',
-    range: 'Sheet1!A2:E',
-    valueInputOption: 'USER_ENTERED',
-    resource: {
-        values: [
-            [weekNum, fname, lname, belt, answer]
-        ]
-    }
-  }).then(function(response) {
-    console.log(response);
-  });
+  // gapi.client.sheets.spreadsheets.values.update({
+  //   spreadsheetId: '1bilf2_IUbhUbA-Gh5AuQ-KJI0tYfQy4J53Ofq2hU6Ik',
+  //   range: 'Sheet1!A2:E',
+  //   valueInputOption: 'USER_ENTERED',
+  //   resource: {
+  //       values: [
+  //           [weekNum, fname, lname, belt, answer]
+  //       ]
+  //   }
+  // }).then(function(response) {
+  //   console.log(response);
+  // });
 }
 
 
