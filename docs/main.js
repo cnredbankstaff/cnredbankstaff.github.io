@@ -91,6 +91,7 @@ function updateData() {
           document.getElementById("question_label").innerHTML = question;
           document.getElementById("option1").innerHTML = option1;
           document.getElementById("option2").innerHTML = option2;
+          break;
         } else {
           question = "No Question";
           option1 = "No Option 1";
