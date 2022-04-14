@@ -73,33 +73,34 @@ function updateData() {
   }).then(function(response) {
     var range = response.result;
     if (range.values.length > 0) {
-    for (i = 0; i < range.values.length; i++) {
-      var row = range.values[i];
-      console.log(row[1]);
-      console.log(row[2]);
-      console.log("weeknum " + weekNum);
-      // its not pulling the updated spreadsheet
-      // Print columns A and E, which correspond to indices 0 and 4.
-      if (row[1] == weekNum) {
-        question = row[2];
-        option1 = row[3];
-        option2 = row[4];
-        console.log(question + " " + option1 + " " + option2);
+      for (i = 0; i < range.values.length; i++) {
+        var row = range.values[i];
+        console.log(row[1]);
+        console.log(row[2]);
+        console.log("weeknum " + weekNum);
+        console.log(range.values.length);
+        // its not pulling the updated spreadsheet
+        // Print columns A and E, which correspond to indices 0 and 4.
+        if (row[1] == weekNum) {
+          question = row[2];
+          option1 = row[3];
+          option2 = row[4];
+          console.log(question + " " + option1 + " " + option2);
 
-        document.getElementById("question_label").innerHTML = question;
-        document.getElementById("option1").innerHTML = option1;
-        document.getElementById("option2").innerHTML = option2;
-      } else {
-        question = "No Question";
-        option1 = "No Option 1";
-        option2 = "No Option 2";
-    
-        document.getElementById("question_label").innerHTML = question;
-        document.getElementById("option1").innerHTML = option1;
-        document.getElementById("option2").innerHTML = option2;
+          document.getElementById("question_label").innerHTML = question;
+          document.getElementById("option1").innerHTML = option1;
+          document.getElementById("option2").innerHTML = option2;
+        } else {
+          question = "No Question";
+          option1 = "No Option 1";
+          option2 = "No Option 2";
+      
+          document.getElementById("question_label").innerHTML = question;
+          document.getElementById("option1").innerHTML = option1;
+          document.getElementById("option2").innerHTML = option2;
+        }
       }
     }
-  }
   }, function(response) {
     console.log('Error: ' + response.result.error.message);
   });
