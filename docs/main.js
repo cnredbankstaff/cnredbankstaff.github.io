@@ -111,7 +111,7 @@ function updateData() {
 function spreadsheetUpdate() {
   gapi.client.sheets.spreadsheets.values.get({
     spreadsheetId: '1bilf2_IUbhUbA-Gh5AuQ-KJI0tYfQy4J53Ofq2hU6Ik',
-    range: 'Sheet1!A2:E',
+    range: 'Sheet1!A:E',
   }).then(function(response) {
     console.log(response);
     for(i = 0; i < response.result.values.length; i++){
