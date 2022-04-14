@@ -73,7 +73,8 @@ function updateData() {
   }).then(function(response) {
     var range = response.result;
     if (range.values.length > 0) {
-      var row = response.result.values[0];
+    for (i = 0; i < range.values.length; i++) {
+      var row = range.values[i];
       console.log(row[1]);
       console.log(row[2]);
       console.log("weeknum " + weekNum);
@@ -97,7 +98,8 @@ function updateData() {
         document.getElementById("option1").innerHTML = option1;
         document.getElementById("option2").innerHTML = option2;
       }
-    } 
+    }
+  }
   }, function(response) {
     console.log('Error: ' + response.result.error.message);
   });
