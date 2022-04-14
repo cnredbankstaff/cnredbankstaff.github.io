@@ -108,6 +108,29 @@ function updateData() {
   });
 }
 
+function spreadsheetUpdate() {
+  gapi.client.sheets.spreadsheets.values.get({
+    spreadsheetId: '18riOJtSjAPxuKJ8rxOR2Tqeyc95UJ4XnIWZpViLOgwc',
+    range: 'Sheet1!A2:E',
+  }).then(function(response) {
+    console.log(response);
+    // for(i = 0; i < response.result.values.length; i++){
+    //   if()
+    // }
+  })
+  gapi.client.sheets.spreadsheets.values.update({
+    spreadsheetId: '1bilf2_IUbhUbA-Gh5AuQ-KJI0tYfQy4J53Ofq2hU6Ik',
+    range: 'Sheet1!A2:E',
+    valueInputOption: 'USER_ENTERED',
+    resource: {
+        values: [
+            [weekNum, fname, lname, belt, answer]
+        ]
+    }
+  }).then(function(response) {
+    console.log(response);
+  });
+}
 
 
 function submitAction() {
@@ -117,6 +140,7 @@ function submitAction() {
     answer = document.getElementById("answer").value;
 
     console.log(fname + " " + lname + " " + belt + "" + answer);
+    spreadsheetUpdate();
 }
 
 window.onload = function() {
