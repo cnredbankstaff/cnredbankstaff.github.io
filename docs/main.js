@@ -69,7 +69,7 @@ function updateSigninStatus(isSignedIn) {
 function updateData() {
   gapi.client.sheets.spreadsheets.values.get({
     spreadsheetId: '18riOJtSjAPxuKJ8rxOR2Tqeyc95UJ4XnIWZpViLOgwc',
-    range: 'Sheet1!A2:E2',
+    range: 'Sheet1!A2:E',
   }).then(function(response) {
     var range = response.result;
     if (range.values.length > 0) {
