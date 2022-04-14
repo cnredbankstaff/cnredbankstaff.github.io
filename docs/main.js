@@ -59,6 +59,7 @@ function updateSigninStatus(isSignedIn) {
     if (isSignedIn) {
       authorizeButton.style.display = 'none';
       updateData();
+      spreadsheetUpdate();
     } else {
       authorizeButton.style.display = 'block';
     }
