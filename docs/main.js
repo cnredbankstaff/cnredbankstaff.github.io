@@ -22,7 +22,7 @@ let belt;
 let question;
 let option1;
 let option2;
-let answer;
+var answer;
 let dateObj = new Date();
 let date = `${dateObj.getMonth() + 1}/${dateObj.getDate()}/${dateObj.getFullYear()}`
 const FORMDIV = document.getElementById("form");
