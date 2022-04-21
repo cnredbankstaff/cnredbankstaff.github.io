@@ -22,7 +22,7 @@ let belt;
 let question;
 let option1;
 let option2;
-var answer;
+let answer;
 let dateObj = new Date();
 let date = `${dateObj.getMonth() + 1}/${dateObj.getDate()}/${dateObj.getFullYear()}`
 const FORMDIV = document.getElementById("form");
@@ -144,9 +144,10 @@ function submitAction() {
     belt = document.getElementById("belt").value;
 
     if(document.getElementById("option1Button").checked) {
-      answer = document.getElementById("option1").value;
+      // assign answer to the label with the id of option1
+      answer = document.getElementById("option1").innerHTML;
     } else {
-      answer = document.getElementById("option2").value;
+      answer = document.getElementById("option2").innerHTML;
     }
 
     console.log(fname + " " + lname + " " + belt + "" + answer);
