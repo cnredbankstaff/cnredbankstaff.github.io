@@ -22,6 +22,7 @@ let belt;
 let question;
 let option1;
 let option2;
+let answer;
 let dateObj = new Date();
 let date = `${dateObj.getMonth() + 1}/${dateObj.getDate()}/${dateObj.getFullYear()}`
 const FORMDIV = document.getElementById("form");
@@ -117,6 +118,7 @@ function spreadsheetUpdate() {
     for(i = 0; i < response.result.values.length; i++){
       var row = response.result.values;
       if(row[i] !== undefined && row[i + 1] === undefined) {
+        console.log(row[i] + " " + row[i + 1] + " test works");
         gapi.client.sheets.spreadsheets.values.update({
           spreadsheetId: '1bilf2_IUbhUbA-Gh5AuQ-KJI0tYfQy4J53Ofq2hU6Ik',
           range: 'Sheet1!A'+ (i + 1) + ':E' + (i + 1),
