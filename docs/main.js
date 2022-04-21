@@ -141,7 +141,7 @@ function submitAction() {
     lname = document.getElementById("lname").value;
     belt = document.getElementById("belt").value;
 
-    if(document.getElementById("option1").checked) {
+    if(document.getElementById("option1Button").checked) {
       answer = document.getElementById("option1").value;
     } else {
       answer = document.getElementById("option2").value;
