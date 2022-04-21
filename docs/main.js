@@ -148,7 +148,7 @@ function submitAction() {
     if(document.getElementById("option1Button").checked) {
       // assign answer to the label with the id of option1
       answer = document.getElementById("option1").innerHTML;
-      console.log(answer);
+      // console.log(answer);
     } else {
       answer = document.getElementById("option2").innerHTML;
     }
