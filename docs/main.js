@@ -7,7 +7,7 @@ const DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v
 
 // Authorization scopes required by the API; multiple scopes can be
 // included, separated by spaces.
-const SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+const SCOPES = "https://www.googleapis.com/auth/spreadsheets";
 
 let authorizeButton = document.getElementById('authorize_button');
 let viewButton = document.getElementById('view_answers');
@@ -150,7 +150,7 @@ function submitAction() {
       answer = document.getElementById("option2").innerHTML;
     }
 
-    console.log(fname + " " + lname + " " + belt + "" + answer);
+    console.log(fname + " " + lname + " " + belt + " " + answer);
     spreadsheetUpdate();
 }
 
