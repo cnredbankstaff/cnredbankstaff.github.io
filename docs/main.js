@@ -22,6 +22,7 @@ let belt;
 let question;
 let option1;
 let option2;
+let correctAnswer;
 let answer;
 let dateObj = new Date();
 let date = `${dateObj.getMonth() + 1}/${dateObj.getDate()}/${dateObj.getFullYear()}`
@@ -70,12 +71,13 @@ function updateSigninStatus(isSignedIn) {
 function updateData() {
   gapi.client.sheets.spreadsheets.values.get({
     spreadsheetId: '18riOJtSjAPxuKJ8rxOR2Tqeyc95UJ4XnIWZpViLOgwc',
-    range: 'Sheet1!A2:E',
+    range: 'Sheet1!A2:F',
   }).then(function(response) {
     var range = response.result;
     if (range.values.length > 0) {
       for (i = 0; i < range.values.length; i++) {
         var row = range.values[i];
+        correctAnswer = row[5];
         // console.log(row[1]);
         // console.log(row[2]);
         // console.log("weeknum " + weekNum);
