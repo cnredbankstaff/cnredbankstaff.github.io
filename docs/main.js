@@ -123,7 +123,7 @@ function spreadsheetUpdate() {
         console.log(row[i] + " " + row[i + 1] + " test works");
         gapi.client.sheets.spreadsheets.values.update({
           spreadsheetId: '1bilf2_IUbhUbA-Gh5AuQ-KJI0tYfQy4J53Ofq2hU6Ik',
-          range: 'Sheet1!A'+ (i + 1) + ':E' + (i + 1),
+          range: 'Sheet1!A'+ (i + 2) + ':E' + (i + 2),
           valueInputOption: 'USER_ENTERED',
           resource: {
               values: [
@@ -148,6 +148,7 @@ function submitAction() {
     if(document.getElementById("option1Button").checked) {
       // assign answer to the label with the id of option1
       answer = document.getElementById("option1").innerHTML;
+      console.log(answer);
     } else {
       answer = document.getElementById("option2").innerHTML;
     }
