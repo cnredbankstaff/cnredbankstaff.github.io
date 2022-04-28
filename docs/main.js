@@ -23,12 +23,14 @@ let question;
 let option1;
 let option2;
 let correctAnswer;
+let answered = false;
+let doneText = document.getElementById("doneText");
 let answer;
 let dateObj = new Date();
 let date = `${dateObj.getMonth() + 1}/${dateObj.getDate()}/${dateObj.getFullYear()}`
 const FORMDIV = document.getElementById("form");
 
-
+doneText.visible = true;
 
 
 function handleClientLoad() {
@@ -132,6 +134,7 @@ function spreadsheetUpdate() {
           }
         }).then(function(response) {
           console.log(response);
+          answered = true;
         });
         break;
       }
@@ -141,9 +144,9 @@ function spreadsheetUpdate() {
 
 
 function submitAction() {
-    fname = document.getElementById("fname").value;
-    lname = document.getElementById("lname").value;
-    belt = document.getElementById("belt").value;
+  fname = document.getElementById("fname").value;
+  lname = document.getElementById("lname").value;
+  belt = document.getElementById("belt").value;
 
     if(document.getElementById("option1Button").checked) {
       // assign answer to the label with the id of option1
@@ -153,12 +156,17 @@ function submitAction() {
       answer = document.getElementById("option2").innerHTML;
     }
 
-    console.log(fname + " " + lname + " " + belt + " " + answer);
-    spreadsheetUpdate();
+  console.log(fname + " " + lname + " " + belt + " " + answer);
+  spreadsheetUpdate();
 }
 
 window.onload = function() {
     document.getElementById("date").innerHTML = date;
+    setInterval(function(){
+      if(answered === true) {
+        doneText.visible = false;
+      }
+    },500);
 }
 
 
