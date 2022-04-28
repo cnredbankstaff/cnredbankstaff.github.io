@@ -30,8 +30,6 @@ let dateObj = new Date();
 let date = `${dateObj.getMonth() + 1}/${dateObj.getDate()}/${dateObj.getFullYear()}`
 const FORMDIV = document.getElementById("form");
 
-doneText.visible = false;
-
 
 function handleClientLoad() {
     gapi.load('client:auth2', initClient);
@@ -164,7 +162,7 @@ window.onload = function() {
     document.getElementById("date").innerHTML = date;
     setInterval(function(){
       if(answered === true) {
-        doneText.visible = true;
+        doneText.hidden = false;
       }
     },500);
 }
