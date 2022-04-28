@@ -164,6 +164,7 @@ window.onload = function() {
     setInterval(function(){
       if(answered === true) {
         doneText.hidden = false;
+        console.log("also worked");
       }
     },500);
 }
