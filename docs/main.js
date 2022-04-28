@@ -30,7 +30,7 @@ let dateObj = new Date();
 let date = `${dateObj.getMonth() + 1}/${dateObj.getDate()}/${dateObj.getFullYear()}`
 const FORMDIV = document.getElementById("form");
 
-doneText.visible = true;
+doneText.visible = false;
 
 
 function handleClientLoad() {
@@ -164,7 +164,7 @@ window.onload = function() {
     document.getElementById("date").innerHTML = date;
     setInterval(function(){
       if(answered === true) {
-        doneText.visible = false;
+        doneText.visible = true;
       }
     },500);
 }
