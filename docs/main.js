@@ -161,10 +161,11 @@ function submitAction() {
 
 window.onload = function() {
     document.getElementById("date").innerHTML = date;
-    setInterval(function(){
+    var interval = setInterval(function(){
       if(answered === true) {
-        doneText.hidden = false;
+        doneText.style.display = initial;
         console.log("also worked");
+        clearInterval(interval);
       }
     },500);
 }
