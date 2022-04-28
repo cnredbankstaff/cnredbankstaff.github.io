@@ -163,7 +163,7 @@ window.onload = function() {
     document.getElementById("date").innerHTML = date;
     var interval = setInterval(function(){
       if(answered === true) {
-        doneText.display = "initial";
+        doneText.display = "block";
         console.log("also worked");
         clearInterval(interval);
       }
