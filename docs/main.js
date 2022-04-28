@@ -133,6 +133,7 @@ function spreadsheetUpdate() {
         }).then(function(response) {
           console.log(response);
           answered = true;
+          console.log("worked");
         });
         break;
       }
