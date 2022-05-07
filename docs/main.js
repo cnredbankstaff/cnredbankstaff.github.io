@@ -164,7 +164,7 @@ window.onload = function() {
     var interval = setInterval(function(){
       console.log(doneText.style.visibility);
       if(answered === true) {
-        doneText.style.visiblity = "visible";
+        doneText.className = "text-center font-serif text-4xl py-8 visible";
         console.log("also worked");
         console.log(doneText.style.visibility);
         clearInterval(interval);
