@@ -162,11 +162,9 @@ function submitAction() {
 window.onload = function() {
     document.getElementById("date").innerHTML = date;
     var interval = setInterval(function(){
-      console.log(doneText.style.visibility);
       if(answered === true) {
         doneText.className = "text-center font-serif text-4xl py-8 visible";
         console.log("also worked");
-        console.log(doneText.style.visibility);
         clearInterval(interval);
       }
     },500);
