@@ -162,9 +162,11 @@ function submitAction() {
 window.onload = function() {
     document.getElementById("date").innerHTML = date;
     var interval = setInterval(function(){
+      console.log(doneText.style.visibility);
       if(answered === true) {
         doneText.style.visiblity = "visible";
         console.log("also worked");
+        console.log(doneText.style.visibility);
         clearInterval(interval);
       }
     },500);
